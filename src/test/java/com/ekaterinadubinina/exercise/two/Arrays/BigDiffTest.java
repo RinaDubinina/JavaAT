@@ -1,19 +1,20 @@
 package com.ekaterinadubinina.exercise.two.Arrays;
 
+import java.lang.NullPointerException;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class BigDiffTest {
     ///GIVEN
-    BigDiff bigDiff = new BigDiff();
+    private BigDiff bigDiff = new BigDiff();
 
     @Test
-    public void shouldReturnBigDiffFirs() {
+    public void shouldReturnDifferenceBetweenLargestSmallestValuesFirstCase() {
 
         ///WHEN
         int[] nums = {10, 3, 5, 6};
-
 
         ///THEN
         int actual = bigDiff.bigDiff(nums);
@@ -22,11 +23,10 @@ public class BigDiffTest {
     }
 
     @Test
-    public void shouldReturnBigDiffSecond() {
+    public void shouldReturnDifferenceBetweenLargestSmallestValuesSecondCase() {
 
         ///WHEN
         int[] nums = {2, 2};
-
 
         ///THEN
         int actual = bigDiff.bigDiff(nums);
@@ -35,15 +35,22 @@ public class BigDiffTest {
     }
 
     @Test
-    public void shouldReturnBigDiffThird() {
+    public void shouldReturnDifferenceBetweenLargestSmallestValuesThirdCase() {
 
         ///WHEN
         int[] nums = {7, 7, 6, 8, 5, 5, 6};
-
 
         ///THEN
         int actual = bigDiff.bigDiff(nums);
         int expected = 3;
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionWhenArrayNull() {
+
+        ///WHEN
+        int[] nums = null;
+        int actual = bigDiff.bigDiff(nums);
     }
 }

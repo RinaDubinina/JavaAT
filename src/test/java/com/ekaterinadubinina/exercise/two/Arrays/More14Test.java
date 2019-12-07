@@ -6,15 +6,14 @@ import static org.junit.Assert.assertEquals;
 
 public class More14Test {
     ///GIVEN
-    More14 more14 = new More14();
+    private More14 more14 = new More14();
 
     @Test
-    public void shouldReturnMore14First() {
+    public void shouldReturnTrueIfNumFirstGreaterThenFourthFirstCase() {
 
         ///WHEN
         int[] nums = {1, 4, 1};
 
-
         ///THEN
         boolean actual = more14.more14(nums);
         boolean expected = true;
@@ -22,11 +21,22 @@ public class More14Test {
     }
 
     @Test
-    public void shouldReturnMore14Second() {
+    public void shouldReturnTrueIfNumFirstGreaterThenFourthSecondCase() {
 
         ///WHEN
         int[] nums = {1, 4, 1, 4, 1, 6};
 
+        ///THEN
+        boolean actual = more14.more14(nums);
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnTrueIfNumFirstGreaterThenFourthThirdCase() {
+
+        ///WHEN
+        int[] nums = {1, 1};
 
         ///THEN
         boolean actual = more14.more14(nums);
@@ -35,15 +45,24 @@ public class More14Test {
     }
 
     @Test
-    public void shouldReturnMore14Third() {
+    public void shouldReturnFalseIfArrayIsEmpty() {
 
         ///WHEN
-        int[] nums = {1, 1};
-
+        int[] nums = {};
 
         ///THEN
         boolean actual = more14.more14(nums);
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionWhenArrayIsNull() {
+
+        ///WHEN
+        int[] nums = null;
+
+        ///THEN
+        boolean actual = more14.more14(nums);
     }
 }

@@ -9,42 +9,45 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BobThereTest {
 
     ///GIVEN
-    BobThere bobThere = new BobThere();
+    private BobThere bobThere = new BobThere();
 
     @Test
-    public void shouldReturnBobThereFirst() {
+    public void shouldReturnTrueIfBobThereFirstCase() {
 
         ///WHEN
         boolean actual = bobThere.bobThere("123abcbcdbabxyz");
 
-
         //THEN
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnBobThereSecond() {
+    public void shouldReturnTrueIfBobThereSecondCase() {
 
         ///WHEN
         boolean actual = bobThere.bobThere("b12b1b");
 
+        //THEN
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnTrueIfBobThereThirdCase() {
+
+        ///WHEN
+        boolean actual = bobThere.bobThere("bbb");
 
         //THEN
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
-
-    @Test
-    public void shouldReturnBobThereThird() {
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExeptionWhenStringNull() {
 
         ///WHEN
-        boolean actual = bobThere.bobThere("bbb");
-
-
-        //THEN
-        boolean expected = true;
-        assertEquals(expected, actual);
+        boolean actual = bobThere.bobThere(null);
     }
 }

@@ -6,10 +6,10 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class Reverse3Test {
     ///GIVEN
-    Reverse3 reverse3 = new Reverse3();
+    private Reverse3 reverse3 = new Reverse3();
 
     @Test
-    public void shouldReturnReverse3First() {
+    public void shouldReturnNewArrayWithReverseElementsFirstCase() {
 
         ///WHEN
         int[] nums = {1, 2, 3};
@@ -21,7 +21,7 @@ public class Reverse3Test {
     }
 
     @Test
-    public void shouldReturnReverse3Second() {
+    public void shouldReturnNewArrayWithReverseElementsSecondCase() {
 
         ///WHEN
         int[] nums = {5, 11, 9};
@@ -33,7 +33,7 @@ public class Reverse3Test {
     }
 
     @Test
-    public void shouldReturnReverse3Third() {
+    public void shouldReturnNewArrayWithReverseElementsThirdCase() {
 
         ///WHEN
         int[] nums = {7, 0, 0};
@@ -42,5 +42,15 @@ public class Reverse3Test {
         int[] actual = reverse3.reverse3(nums);
         int[] expected = {0, 0, 7};
         assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionWhenArrayIsNull() {
+
+        ///WHEN
+        int[] nums = null;
+
+        ///THEN
+        int[] actual = reverse3.reverse3(nums);
     }
 }

@@ -6,10 +6,10 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class MiddleWayTest {
     ///GIVEN
-    MiddleWay middleWay = new MiddleWay();
+    private MiddleWay middleWay = new MiddleWay();
 
     @Test
-    public void shouldReturnMiddleWayArraysFirst() {
+    public void shouldReturnMiddleTwoArraysFirstCase() {
 
         ///WHEN
         int[] a = {1, 2, 3};
@@ -22,7 +22,7 @@ public class MiddleWayTest {
     }
 
     @Test
-    public void shouldReturnMiddleWayArraysSecond() {
+    public void shouldReturnMiddleTwoArraysSecondCase() {
 
         ///WHEN
         int[] a = {5, 2, 9};
@@ -35,7 +35,7 @@ public class MiddleWayTest {
     }
 
     @Test
-    public void shouldReturnMiddleWayArraysThird() {
+    public void shouldReturnMiddleTwoArraysThirdCase() {
 
         ///WHEN
         int[] a = {5, 126, 33};
@@ -45,5 +45,16 @@ public class MiddleWayTest {
         int[] actual = middleWay.middleWay(a, b);
         int[] expected = {126, 11};
         assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionIfOneArrayNull() {
+
+        ///WHEN
+        int[] a = null;
+        int[] b = {40, 11, 15};
+
+        ///THEN
+        int[] actual = middleWay.middleWay(a, b);
     }
 }

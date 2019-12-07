@@ -7,44 +7,47 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RepeatEndTest {
 
     ///GIVEN
-    RepeatEnd repeatStringEnd = new RepeatEnd();
+    private RepeatEnd repeatStringEnd = new RepeatEnd();
 
     @Test
-    public void shouldReturnRepeatStringEndFirst() {
+    public void shouldReturnRepeatLastCharactersOfStringFirstCase() {
 
-///WHEN
+        ///WHEN
         String actual = repeatStringEnd.repeatEnd("Hello", 3);
 
-///THEN
+        ///THEN
         String expected = "llollollo";
         assertEquals(expected, actual);
-
     }
 
     @Test
-    public void shouldReturnRepeatStringEndSecond() {
+    public void shouldReturnRepeatLastCharactersOfStringSecondCase() {
 
-///WHEN
+        ///WHEN
         String actual = repeatStringEnd.repeatEnd("1234", 2);
 
-///THEN
+        ///THEN
         String expected = "3434";
         assertEquals(expected, actual);
-
     }
 
     @Test
-    public void shouldReturnStringEndThirt() {
+    public void shouldReturnRepeatLastCharactersOfStringThirdCase() {
 
-///WHEN
+        ///WHEN
         String actual = repeatStringEnd.repeatEnd("", 0);
 
-///THEN
+        ///THEN
         String expected = "";
         assertEquals(expected, actual);
-
     }
 
+    @Test (expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionWhenStringNull () {
+
+        ///WHEN
+        String actual = repeatStringEnd.repeatEnd(null, 1);
+    }
 
 }
 
