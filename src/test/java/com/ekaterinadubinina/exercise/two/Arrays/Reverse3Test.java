@@ -20,13 +20,6 @@ public class Reverse3Test {
         assertArrayEquals(expected, actual);
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void shouldReturnNewArrayWithReverseElementsSecondCase() {
-
-        ///WHEN
-        int[] nums = {};
-    }
-
     @Test
     public void shouldReturnNewArrayWithReverseElementsOfArrayWithNegativeValues() {
 

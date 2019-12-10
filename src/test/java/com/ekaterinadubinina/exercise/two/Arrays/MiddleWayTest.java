@@ -34,14 +34,6 @@ public class MiddleWayTest {
         assertArrayEquals(expected, actual);
     }
 
-    @Test (expected = IllegalStateException.class)
-    public void shouldReturnThrowExceptionIfLengthOneOfArraysNotEqualThree() {
-
-        ///WHEN
-        int[] a = {5, 126};
-        int[] b = {40, 11, 15};
-    }
-
     @Test(expected = NullPointerException.class)
     public void shouldReturnThrowExceptionIfOneArrayNull() {
 
