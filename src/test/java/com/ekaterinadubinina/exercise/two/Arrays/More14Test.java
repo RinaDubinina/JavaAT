@@ -9,7 +9,7 @@ public class More14Test {
     private More14 more14 = new More14();
 
     @Test
-    public void shouldReturnTrueIfNumFirstGreaterThenFourthFirstCase() {
+    public void shouldReturnTrueIfAmountOfElementsEqualOneGreaterThenAmountOfElementEqualFour() {
 
         ///WHEN
         int[] nums = {1, 4, 1};
@@ -21,19 +21,19 @@ public class More14Test {
     }
 
     @Test
-    public void shouldReturnTrueIfNumFirstGreaterThenFourthSecondCase() {
+    public void shouldReturnFalseIfAmountOfElementsEqualOneEquallyThenAmountOfElementEqualFour() {
 
         ///WHEN
-        int[] nums = {1, 4, 1, 4, 1, 6};
+        int[] nums = {1, 4, 1, 4, 6};
 
         ///THEN
         boolean actual = more14.more14(nums);
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnTrueIfNumFirstGreaterThenFourthThirdCase() {
+    public void shouldReturnTrueIfArrayConsistOnlyAmountOfElementsEqualOne() {
 
         ///WHEN
         int[] nums = {1, 1};

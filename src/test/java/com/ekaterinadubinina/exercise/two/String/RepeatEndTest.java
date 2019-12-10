@@ -10,7 +10,7 @@ public class RepeatEndTest {
     private RepeatEnd repeatStringEnd = new RepeatEnd();
 
     @Test
-    public void shouldReturnRepeatLastCharactersOfStringFirstCase() {
+    public void shouldReturnRepeatLastCharactersOfString() {
 
         ///WHEN
         String actual = repeatStringEnd.repeatEnd("Hello", 3);
@@ -21,29 +21,25 @@ public class RepeatEndTest {
     }
 
     @Test
-    public void shouldReturnRepeatLastCharactersOfStringSecondCase() {
+    public void shouldReturnEmptyStringIfRepeatValueEqualZero() {
 
         ///WHEN
-        String actual = repeatStringEnd.repeatEnd("1234", 2);
-
-        ///THEN
-        String expected = "3434";
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldReturnRepeatLastCharactersOfStringThirdCase() {
-
-        ///WHEN
-        String actual = repeatStringEnd.repeatEnd("", 0);
+        String actual = repeatStringEnd.repeatEnd("1234", 0);
 
         ///THEN
         String expected = "";
         assertEquals(expected, actual);
     }
 
-    @Test (expected = NullPointerException.class)
-    public void shouldReturnThrowExceptionWhenStringNull () {
+    @Test(expected = Exception.class)
+    public void shouldReturnThrowExceptionIfOriginalStringIsEmptyAndRepeatValueNotEqualZero() {
+
+        ///WHEN
+        String actual = repeatStringEnd.repeatEnd("", 2);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void shouldReturnThrowExceptionWhenStringNull() {
 
         ///WHEN
         String actual = repeatStringEnd.repeatEnd(null, 1);

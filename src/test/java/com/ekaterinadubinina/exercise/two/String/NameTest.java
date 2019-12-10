@@ -10,7 +10,7 @@ public class NameTest {
     private Name name = new Name();
 
     @Test
-    public void shouldReturnHelloNameFirstCase() {
+    public void shouldReturnHelloName() {
 
         ///WHEN
         String actual = name.helloName("Bob");
@@ -21,16 +21,16 @@ public class NameTest {
     }
 
     @Test
-    public void shouldReturnHelloNameSecondCase() {
+    public void shouldReturnOnlyHelloIfNameIsEmpty() {
         ///WHEN
-        String actual = name.helloName("Alice");
+        String actual = name.helloName("");
         ///THEN
-        String expected2 = "Hello Alice!";
+        String expected2 = "Hello !";
         assertEquals(expected2, actual);
     }
 
     @Test
-    public void shouldReturnHelloNameThirdCase() {
+    public void shouldReturnHelloNameIfStringContainsSeveralWords() {
 
         ///WHEN
         String actual = name.helloName("ho ho ho");

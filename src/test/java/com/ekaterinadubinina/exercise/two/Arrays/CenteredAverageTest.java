@@ -9,7 +9,7 @@ public class CenteredAverageTest {
     private CenteredAverage centeredAverage = new CenteredAverage();
 
     @Test
-    public void shouldReturnCenteredAverageFirstCase() {
+    public void shouldReturnMeanAverageArrayWithoutMaxMinPositiveValues() {
 
         ///WHEN
         int[] nums = {1, 1, 5, 5, 10, 8, 7};
@@ -21,7 +21,7 @@ public class CenteredAverageTest {
     }
 
     @Test
-    public void shouldReturnCenteredAverageSecondCase() {
+    public void shouldReturnMeanAverageArrayWithoutMaxMinNegativeValues() {
 
         ///WHEN
         int[] nums = {-10, -4, -2, -4, -2, 0};
@@ -33,21 +33,21 @@ public class CenteredAverageTest {
     }
 
     @Test
-    public void shouldReturnCenteredAverageThirdCase() {
+    public void shouldReturnMeanAverageArrayWithoutMaxMinValuesIfAllValuesAreEqual() {
 
         ///WHEN
-        int[] nums = {1000, 0, 1, 99};
+        int[] nums = {7, 7, 7};
 
         ///THEN
         int actual = centeredAverage.centeredAverage(nums);
-        int expected = 50;
+        int expected = 7;
         assertEquals(expected, actual);
     }
 
     @Test(expected = NullPointerException.class)
     public void shouldReturnThrowExceptionWhenArrayNull() {
 
-        ///WHEN
+            ///WHEN
         int[] nums = null;
 
         ///THEN

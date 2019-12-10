@@ -10,7 +10,7 @@ public class BalanceXYTest {
     private BalanceXY xyBalance = new BalanceXY();
 
     @Test
-    public void shouldReturnTrueIfAfterXExistYFirstCase() {
+    public void shouldReturnTrueIfAfterXExistY() {
         ///WHEN
         boolean actual = xyBalance.xyBalance("aaxbby");
 
@@ -20,17 +20,17 @@ public class BalanceXYTest {
     }
 
     @Test
-    public void shouldReturnTrueIfAfterXExistYSecondCase() {
+    public void shouldReturnFalseIfAfterXNotExistY() {
         ///WHEN
-        boolean actual = xyBalance.xyBalance("12xabxxydxyxyzz");
+        boolean actual = xyBalance.xyBalance("12xabxxydxyxzz");
 
         ///THEN
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnTrueIfAfterXExistYThirdCase() {
+    public void shouldReturnTrueIfStringIsEmpty() {
         ///WHEN
         boolean actual = xyBalance.xyBalance("");
 

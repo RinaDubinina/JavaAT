@@ -5,6 +5,9 @@ public class MiddleWay {
         if (a == null || b == null) {
             throw new NullPointerException();
         }
+        if (a.length != 3 || b.length != 3) {
+            throw new IllegalStateException();
+        }
         int[] array = {a[1], b[1]};
         return array;
     }

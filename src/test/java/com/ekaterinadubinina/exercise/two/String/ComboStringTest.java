@@ -9,7 +9,7 @@ public class ComboStringTest {
     private ComboString comboTwoString = new ComboString();
 
     @Test
-    public void shouldReturnComboTwoStringFirstCase() throws Exception {
+    public void shouldReturnComboTwoString() {
 
         ///WHEN
         String combo = comboTwoString.comboString("Hello", "hi");
@@ -20,7 +20,7 @@ public class ComboStringTest {
     }
 
     @Test
-    public void shouldReturnComboTwoStringSecondCase() throws Exception {
+    public void shouldReturnComboTwoStringIfOneOfThewIsEmpty() {
 
         ///WHEN
         String combo = comboTwoString.comboString("", "bb");
@@ -31,13 +31,13 @@ public class ComboStringTest {
     }
 
     @Test
-    public void shouldReturnComboTwoStringThirdCase() throws Exception {
+    public void shouldReturnEmptyStringIfTwoStringAreEmpty() {
 
         ///WHEN
-        String combo = comboTwoString.comboString("aaa", "1234");
+        String combo = comboTwoString.comboString("", "");
 
         ///THEN
-        String expected = "aaa1234aaa";
+        String expected = "";
         assertEquals(expected, combo);
     }
 

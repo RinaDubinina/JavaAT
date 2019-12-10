@@ -9,7 +9,7 @@ public class MiddleWayTest {
     private MiddleWay middleWay = new MiddleWay();
 
     @Test
-    public void shouldReturnMiddleTwoArraysFirstCase() {
+    public void shouldReturnNewArrayWhichConsistOfMiddleTwoArrays() {
 
         ///WHEN
         int[] a = {1, 2, 3};
@@ -22,29 +22,24 @@ public class MiddleWayTest {
     }
 
     @Test
-    public void shouldReturnMiddleTwoArraysSecondCase() {
+    public void shouldReturnNewArrayWhichConsistOfMiddleTwoArraysWithNegativeValues() {
 
         ///WHEN
-        int[] a = {5, 2, 9};
-        int[] b = {1, 4, 5};
+        int[] a = {-5, -2, -9};
+        int[] b = {-1, -4, -5};
 
         ///THEN
         int[] actual = middleWay.middleWay(a, b);
-        int[] expected = {2, 4};
+        int[] expected = {-2, -4};
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldReturnMiddleTwoArraysThirdCase() {
+    @Test (expected = IllegalStateException.class)
+    public void shouldReturnThrowExceptionIfLengthOneOfArraysNotEqualThree() {
 
         ///WHEN
-        int[] a = {5, 126, 33};
+        int[] a = {5, 126};
         int[] b = {40, 11, 15};
-
-        ///THEN
-        int[] actual = middleWay.middleWay(a, b);
-        int[] expected = {126, 11};
-        assertArrayEquals(expected, actual);
     }
 
     @Test(expected = NullPointerException.class)

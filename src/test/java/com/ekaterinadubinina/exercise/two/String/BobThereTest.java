@@ -12,7 +12,7 @@ public class BobThereTest {
     private BobThere bobThere = new BobThere();
 
     @Test
-    public void shouldReturnTrueIfBobThereFirstCase() {
+    public void shouldReturnTrueIfBobThere() {
 
         ///WHEN
         boolean actual = bobThere.bobThere("123abcbcdbabxyz");
@@ -23,24 +23,24 @@ public class BobThereTest {
     }
 
     @Test
-    public void shouldReturnTrueIfBobThereSecondCase() {
+    public void shouldReturnFalseIfBobNotThere() {
 
         ///WHEN
-        boolean actual = bobThere.bobThere("b12b1b");
+        boolean actual = bobThere.bobThere("b12b1d");
 
         //THEN
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldReturnTrueIfBobThereThirdCase() {
+    public void shouldReturnFalseIfStringIsEmpty() {
 
         ///WHEN
-        boolean actual = bobThere.bobThere("bbb");
+        boolean actual = bobThere.bobThere("");
 
         //THEN
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 

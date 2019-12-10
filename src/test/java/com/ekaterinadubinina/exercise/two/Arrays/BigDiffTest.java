@@ -11,7 +11,7 @@ public class BigDiffTest {
     private BigDiff bigDiff = new BigDiff();
 
     @Test
-    public void shouldReturnDifferenceBetweenLargestSmallestValuesFirstCase() {
+    public void shouldReturnDifferenceBetweenLargestSmallestValues() {
 
         ///WHEN
         int[] nums = {10, 3, 5, 6};
@@ -23,7 +23,7 @@ public class BigDiffTest {
     }
 
     @Test
-    public void shouldReturnDifferenceBetweenLargestSmallestValuesSecondCase() {
+    public void shouldReturnZeroIfValuesAreEqual() {
 
         ///WHEN
         int[] nums = {2, 2};
@@ -35,7 +35,7 @@ public class BigDiffTest {
     }
 
     @Test
-    public void shouldReturnDifferenceBetweenLargestSmallestValuesThirdCase() {
+    public void shouldReturnDifferenceBetweenLargestSmallestValuesIfThereAreSeveral() {
 
         ///WHEN
         int[] nums = {7, 7, 6, 8, 5, 5, 6};

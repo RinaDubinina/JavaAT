@@ -9,7 +9,7 @@ public class Reverse3Test {
     private Reverse3 reverse3 = new Reverse3();
 
     @Test
-    public void shouldReturnNewArrayWithReverseElementsFirstCase() {
+    public void shouldReturnNewArrayWithReverseElements() {
 
         ///WHEN
         int[] nums = {1, 2, 3};
@@ -20,27 +20,22 @@ public class Reverse3Test {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void shouldReturnNewArrayWithReverseElementsSecondCase() {
 
         ///WHEN
-        int[] nums = {5, 11, 9};
-
-        ///THEN
-        int[] actual = reverse3.reverse3(nums);
-        int[] expected = {9, 11, 5};
-        assertArrayEquals(expected, actual);
+        int[] nums = {};
     }
 
     @Test
-    public void shouldReturnNewArrayWithReverseElementsThirdCase() {
+    public void shouldReturnNewArrayWithReverseElementsOfArrayWithNegativeValues() {
 
         ///WHEN
-        int[] nums = {7, 0, 0};
+        int[] nums = {-7, -1, -8};
 
         ///THEN
         int[] actual = reverse3.reverse3(nums);
-        int[] expected = {0, 0, 7};
+        int[] expected = {-8, -1, -7};
         assertArrayEquals(expected, actual);
     }
 
