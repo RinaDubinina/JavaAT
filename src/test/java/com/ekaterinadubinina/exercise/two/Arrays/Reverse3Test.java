@@ -33,7 +33,7 @@ public class Reverse3Test {
     }
 
     @Test(expected = NullPointerException.class)
-    public void shouldReturnThrowExceptionWhenArrayIsNull() {
+    public void shouldReturnThrowExceptionWhenArrayNull() {
 
         ///WHEN
         int[] nums = null;

@@ -35,7 +35,7 @@ public class MiddleWayTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void shouldReturnThrowExceptionIfOneArrayNull() {
+    public void shouldReturnThrowExceptionIfOneArrayIsNull() {
 
         ///WHEN
         int[] a = null;
